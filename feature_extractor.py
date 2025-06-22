@@ -31,6 +31,11 @@ def extract(passwords):
 
     special_characters = '[@_!#$%^&*()<>?/\|}{~:]' 
 
+    password_dictionary = {}
+
+    with open(f"dataset/common_pass.txt", mode='r', encoding='utf-8', errors='replace') as file:
+        password
+
     with open(f"dataset/{passwords}", mode='r', encoding='utf-8', errors='replace') as file:
         reader = csv.reader(file)
         for row in reader:
