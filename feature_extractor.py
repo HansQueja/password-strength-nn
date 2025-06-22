@@ -1,0 +1,68 @@
+
+"""
+From a given password, the following features will be extracted
+- Length of the password
+- Has upper case characters
+- Has lower case characters
+- Has numerical characters
+- Has special characters
+- Number of numerical characters
+- Nummber of special characters
+- Binary classification if the password is in a public dictionary or not
+
+The values will be extracted as a set of vectors.
+"""
+
+import numpy as np
+import csv
+
+import argparse
+
+def parser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--method", help="tells the program if train or predict", type=str, default="train")
+    args = parser.parse_args()
+
+    if args.method == "train":
+        return "training_data.csv"
+    return "testing_data.csv"
+
+def extract(passwords):
+
+    special_characters = '[@_!#$%^&*()<>?/\|}{~:]' 
+
+    with open(f"dataset/{passwords}", mode='r', encoding='utf-8', errors='replace') as file:
+        reader = csv.reader(file)
+        for row in reader:
+
+            password = row[0]
+            strength = row[1]
+            print(password)
+
+            vector = np.array([0] * 8)
+            
+            # Get length of password
+            vector[0] = len(password)
+
+            # Loop through the password to check some features
+            for char in password:
+                if char.isupper() and vector[1] == 0:
+                    vector[1] = 1
+                if char.islower() and vector[2] == 0:
+                    vector[2] = 1
+                if char.isnumeric():
+                    vector[3] = 1
+                    vector[5] += 1
+                if char in special_characters:
+                    vector[4] = 1
+                    vector[6] += 1
+                
+                
+                
+
+
+
+if __name__ == "__main__":
+    file = parser()
+    extract(file)
+    
