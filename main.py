@@ -9,6 +9,8 @@ def parser():
     parser.add_argument("--method", help="tells the program if train or predict", type=str, default="train")
     args = parser.parse_args()
 
+    print("=" * 50)
+    print(f"\nLaunching Password NN {args.method}")
     if args.method == "train":
         X, y = extract(args.method)
         train(X, y)
