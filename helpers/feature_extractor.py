@@ -63,13 +63,46 @@ def extract(method):
         # Append vector to the embedding data structure
         vector_dataset.append(vector)
 
-    print("Embedding finished. Saving training data...")
+    print(f"Embedding finished. Saving {method}ing data...")
     # Prepare input and output data 
     X = np.array(vector_dataset)
     Y = np.array(label)
 
     # Save preprocessed data
     np.savez(f"dataset/{method}_embed_dataset.npz", X=X, Y=Y)
-    print("Training dataset saved.\n")
+    print(f"{method.capitalize()}ing dataset saved.\n")
 
     return X, Y
+
+
+def extract_input(password):
+
+    # String list of special characters for checking
+    special_characters = '[@_!#$%^&*()<>?/\\}{~:]' 
+
+    # Data structures for parsed data storage
+    vector = [0] * 8
+    password = password.strip()
+
+    for characters in password:
+
+        # Get length of password
+        vector[0] = len(password)
+
+        # Loop through the password to check some features
+        for char in password:
+            if char.isupper() and vector[1] == 0:
+                vector[1] = 1
+            if char.islower() and vector[2] == 0:
+                vector[2] = 1
+            if char.isnumeric():
+                vector[3] = 1
+                vector[5] += 1
+            if char in special_characters:
+                vector[4] = 1
+                vector[6] += 1
+
+    # Prepare input data
+    X = np.array([vector])
+
+    return X
