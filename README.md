@@ -2,11 +2,11 @@
 
 A neural network trained to classify passwords as either **easy**, **medium**, or **hard** based on their structural characteristics and security features.
 
-## 🔐 Overview
+## Overview
 
 This project implements a machine learning model that evaluates password strength using neural networks. The model analyzes various password features and provides a three-tier classification system to help users understand their password security level.
 
-## ✨ Features
+## Features
 
 - **Three-tier Classification**: Categorizes passwords into Easy, Medium, or Hard difficulty levels
 - **Feature Analysis**: Evaluates multiple password characteristics including:
@@ -16,7 +16,7 @@ This project implements a machine learning model that evaluates password strengt
 - **High Accuracy**: Trained on comprehensive password datasets from Kaggle
 - **Fast Inference**: Quick password evaluation for real-time applications
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -51,7 +51,7 @@ strength = classifier.predict(password)
 print(f"Password strength: {strength}")
 ```
 
-## 📊 Model Architecture
+## Model Architecture
 
 - **Input Layer**: [Add details about input features]
 - **Hidden Layers**: [Specify architecture details]
@@ -105,41 +105,19 @@ password-strength-nn/
 
 ```
 
-## 📚 API Reference
-
-### PasswordStrengthClassifier
-
-#### Methods
-
-- `method1`: Classify password strength
-
-## 🔬 Examples
-
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch (`git checkout -b feature/feature-name`)
+3. Commit your changes (`git commit -m 'Add feature'`)
+4. Push to the branch (`git push origin feature/feature-name`)
 5. Open a Pull Request
 
 ## 📝 License
 
 This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details.
 
-## 📧 Contact
-
-**Hans Christian Queja** - hansqueja8@gmail.com
-
-Project Link: [https://github.com/HansQueja/password-strength-nn](https://github.com/HansQueja/password-strength-nn)
-
-## 🔄 Future Improvements
-
-- [ ] Add more sophisticated pattern recognition
-- [ ] Implement real-time password strength feedback
-- [ ] Add web interface for easy testing
-
 ---
 
-*Made with ❤️ by [Your Name]*
+*Made with ❤️ by Hans Queja*
