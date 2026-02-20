@@ -1,7 +1,3 @@
-Here is the updated `README.md` based on the provided source code and directory structure. I've updated the model architecture, training parameters, classification tiers, usage instructions, and the project directory tree to match your actual files.
-
----
-
 # Password Strength Neural Network
 
 A neural network trained to classify passwords as **Weak**, **Moderate**, or **Strong** based on their structural characteristics and security features. Includes a real-time Tkinter GUI for easy testing.
